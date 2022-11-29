@@ -1,0 +1,33 @@
+<mat-card class="container">
+  <mat-card-header>
+    <mat-card-title> Listar Jogos </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <table>
+      <tr>
+        <th>SELEÇÃO A</th>
+        <th>PLACAR</th>
+        <th>vs.</th>
+        <th>PLACAR</th>
+        <th>SELEÇÃO B</th>
+      </tr>
+      <tr *ngFor="let jogo of jogos">
+        <td>{{jogo.selecaoA?.nome}}</td>
+        <td>{{jogo.placarA}}</td>
+        <td>x</td>
+        <td>{{jogo.placarB}}</td>
+        <td>{{jogo.selecaoB?.nome}}</td>
+        <td>
+          <button
+            mat-raised-button
+            color="warn"
+            id="btnCadastrar"
+            routerLink="/pages/jogo/alterar/{{jogo.id}}"
+          >
+            Palpitar
+          </button>
+        </td>
+      </tr>
+    </table>
+  </mat-card-content>
+</mat-card>
